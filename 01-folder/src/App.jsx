@@ -1,6 +1,16 @@
-function App(){
+const App = () => {
+  return (
+    <>
+      <div id="dad">
+        <h1 id="child1">Hello</h1>
+        <h3 id="child2">Hello</h3>
+      </div>
 
-  return 'hello'
+      <div id="chacha">
+
+      </div>
+    </>
+  )
 }
 
 export default App
