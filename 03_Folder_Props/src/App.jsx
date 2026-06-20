@@ -4,10 +4,8 @@ import Card from './components/Card'
 const App = () => {
   return (
     <div className="parent">
-      <Card />
-      <Card />
-      <Card />
-
+      <Card user = "Vivek" para = "Lorem ipsum dolor sit amet consect" />
+      <Card user = "Karan" para = " sit amet consectetur adipisicing elit." />
     </div>
   )
 }
