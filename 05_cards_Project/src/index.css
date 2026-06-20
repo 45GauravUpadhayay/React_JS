@@ -1,25 +1,181 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-html,body{
+html,
+body,
+#root {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
 }
 
-.parent{
-  height: 100vh;
-  width: 100vw;
-  background-color: #111;
+body {
+  background-color: #f3f4f6;
+}
+
+/* Cards Container */
+.parent {
+  width: 100%;
   padding: 30px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+
+  justify-items: center;
+  align-items: start;
 }
 
-.card{
-  height: 400px;
-  width: 300px;
+/* Card */
+.card {
+  width: 100%;
+  max-width: 380px;
+
   background-color: #fff;
-  border-radius: 30px;
+  border-radius: 20px;
+  padding: 20px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Top Section */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.top img {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.top button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+
+  background-color: #f1f5f9;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Center Section */
+.center h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.center h3 span {
+  font-size: 13px;
+  color: gray;
+  font-weight: 400;
+}
+
+.center h2 {
+  font-size: 26px;
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.tags h4 {
+  background-color: #eef2ff;
+  color: #4f46e5;
+
+  padding: 8px 12px;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Bottom Section */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid #e5e7eb;
+  padding-top: 20px;
+}
+
+.bottom h3 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.bottom p {
+  color: gray;
+  font-size: 14px;
+}
+
+.bottom button {
+  background-color: #2563eb;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.bottom button:hover {
+  transform: translateY(-2px);
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .parent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .parent {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .bottom button {
+    width: 100%;
+  }
 }
